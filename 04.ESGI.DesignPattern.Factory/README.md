@@ -119,15 +119,3 @@ bdd.CloseConnection();
 ```
 
 Interet : Factorise et cache les détails de création d'un service
-
-
-
-
-
-
-
-
-
-
-
-
