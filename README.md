@@ -1,4 +1,4 @@
-# ESGI Design Pattern
+# ESGI Design Patterns
 
 ## Objectifs
 
@@ -28,6 +28,12 @@ Lancer les tests
 
 ```
 dotnet test project_folder
+```
+
+Tester en continu
+
+```
+dotnet watch test project_folder
 ```
 
 ### IDEs
