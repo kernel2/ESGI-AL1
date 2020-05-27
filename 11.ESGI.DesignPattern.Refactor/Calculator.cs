@@ -5,6 +5,91 @@ using System.Text;
 
 namespace _11.ESGI.DesignPattern.Refactor
 {
+    public abstract class UpdateStrategy
+    {
+        public abstract void Update(Item item);
+
+        public void DecQuality(Item item)
+        {
+            if (item.Quality > 0)
+                item.Quality -= 1;
+        }
+
+        public void IncQuality(Item item)
+        {
+            if (item.Quality  < 50)
+                item.Quality += 1;
+        }
+    }
+
+    public class LegendaryUpdateStrategy : UpdateStrategy
+    {
+        public override void Update(Item item)
+        { }
+    }
+
+    public class AgedBrieUpdateStragegy : UpdateStrategy
+    {
+        public override void Update(Item item)
+        {
+            IncQuality(item);
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0)
+                IncQuality(item);
+        }
+    }
+
+    public class SimpleUpdateStragegy : UpdateStrategy
+    {
+        public override void Update(Item item)
+        {
+            DecQuality(item);
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0)
+                DecQuality(item);
+        }
+    }
+
+    public class BackstagePassesUpdateStrategy : UpdateStrategy
+    {
+        public override void Update(Item item)
+        {
+            IncQuality(item);
+
+            if (item.SellIn < 11)
+                IncQuality(item);
+
+            if (item.SellIn < 6)
+                IncQuality(item);
+
+            item.SellIn -= 1;
+
+            if (item.SellIn < 0)
+                item.Quality = 0;
+        }
+    }
+
+    public class UpdateStrategyFactory
+    { 
+        public static UpdateStrategy Create(Item item)
+        {
+            if (item.Name == "Aged Brie")
+                return new AgedBrieUpdateStragegy();
+
+            if (item.Name == "Sulfuras, Hand of Ragnaros")
+                return new LegendaryUpdateStrategy();
+
+            if (item.Name == "Backstage passes to a TAFKAL80ETC concert")
+                return new BackstagePassesUpdateStrategy();
+
+            return new SimpleUpdateStragegy();
+        }
+    }
+
     public class Calculator
     {
         IList<Item> Items;
@@ -16,78 +101,11 @@ namespace _11.ESGI.DesignPattern.Refactor
 
         public void UpdateQuality()
         {
-
-            for (var i = 0; i < Items.Count; i++)
+            foreach (var item in Items)
             {
-                if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (Items[i].Quality > 0)
-                    {
-                        if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                        {
-                            Items[i].Quality = Items[i].Quality - 1;
-                        }
-                    }
-                }
-                else
-                {
-                    if (Items[i].Quality < 50)
-                    {
-                        Items[i].Quality = Items[i].Quality + 1;
+                var updateStrategy = UpdateStrategyFactory.Create(item);
 
-                        if (Items[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].SellIn < 11)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-
-                            if (Items[i].SellIn < 6)
-                            {
-                                if (Items[i].Quality < 50)
-                                {
-                                    Items[i].Quality = Items[i].Quality + 1;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                {
-                    Items[i].SellIn = Items[i].SellIn - 1;
-                }
-
-                if (Items[i].SellIn < 0)
-                {
-                    if (Items[i].Name != "Aged Brie")
-                    {
-                        if (Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (Items[i].Quality > 0)
-                            {
-                                if (Items[i].Name != "Sulfuras, Hand of Ragnaros")
-                                {
-                                    Items[i].Quality = Items[i].Quality - 1;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            Items[i].Quality = Items[i].Quality - Items[i].Quality;
-                        }
-                    }
-                    else
-                    {
-                        if (Items[i].Quality < 50)
-                        {
-                            Items[i].Quality = Items[i].Quality + 1;
-                        }
-                    }
-                }
+                updateStrategy.Update(item);
             }
         }
     }
