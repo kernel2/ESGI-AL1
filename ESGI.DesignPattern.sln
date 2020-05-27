@@ -19,9 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.ESGI.DesignPattern.Comma
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.ESGI.DesignPattern.Decorator", "08.ESGI.DesignPattern.Decorator\08.ESGI.DesignPattern.Decorator.csproj", "{5D7C2312-2F8D-4F55-832A-4DB977CF9653}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.ESGI.DesignPattern.Composite", "09.ESGI.DesignPattern.Composite\09.ESGI.DesignPattern.Composite.csproj", "{04C83E78-ECFB-4A3C-B34B-B3C2EB22D1AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.ESGI.DesignPattern.Composite", "09.ESGI.DesignPattern.Composite\09.ESGI.DesignPattern.Composite.csproj", "{04C83E78-ECFB-4A3C-B34B-B3C2EB22D1AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.ESGI.DesignPattern.Observer", "10.ESGI.DesignPattern.Observer\10.ESGI.DesignPattern.Observer.csproj", "{0A7C72EC-1207-4B7D-8522-8B0709EC3523}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "10.ESGI.DesignPattern.Observer", "10.ESGI.DesignPattern.Observer\10.ESGI.DesignPattern.Observer.csproj", "{0A7C72EC-1207-4B7D-8522-8B0709EC3523}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11.ESGI.DesignPattern.Refactor", "11.ESGI.DesignPattern.Refactor\11.ESGI.DesignPattern.Refactor.csproj", "{48870209-39AB-4C42-AE0A-53275E9504E3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{0A7C72EC-1207-4B7D-8522-8B0709EC3523}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A7C72EC-1207-4B7D-8522-8B0709EC3523}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A7C72EC-1207-4B7D-8522-8B0709EC3523}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48870209-39AB-4C42-AE0A-53275E9504E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48870209-39AB-4C42-AE0A-53275E9504E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48870209-39AB-4C42-AE0A-53275E9504E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48870209-39AB-4C42-AE0A-53275E9504E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
