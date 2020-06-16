@@ -38,11 +38,6 @@ namespace _12.ESGI.DesignPattern.Refactor
             return "Rock Question " + index;
         }
 
-        public bool IsPlayable()
-        {
-            return (HowManyPlayers() >= 2);
-        }
-
         public bool Add(string playerName)
         {
             _players.Add(playerName);
@@ -53,11 +48,6 @@ namespace _12.ESGI.DesignPattern.Refactor
             Console.WriteLine(playerName + " was added");
             Console.WriteLine("They are player number " + _players.Count);
             return true;
-        }
-
-        public int HowManyPlayers()
-        {
-            return _players.Count;
         }
 
         public void Roll(int roll)
@@ -122,6 +112,11 @@ namespace _12.ESGI.DesignPattern.Refactor
                 Console.WriteLine(_rockQuestions.First());
                 _rockQuestions.RemoveFirst();
             }
+        }
+
+        public bool IsPlayable()
+        {
+            return (HowManyPlayers() >= 2);
         }
 
         private string CurrentCategory()
@@ -191,7 +186,10 @@ namespace _12.ESGI.DesignPattern.Refactor
             if (_currentPlayer == _players.Count) _currentPlayer = 0;
             return true;
         }
-
+        public int HowManyPlayers()
+        {
+            return _players.Count;
+        }
 
         private bool DidPlayerWin()
         {

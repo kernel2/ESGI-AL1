@@ -27,6 +27,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "11.ESGI.DesignPattern.Refac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "12.ESGI.DesignPattern.Refactor", "12.ESGI.DesignPattern.Refactor\12.ESGI.DesignPattern.Refactor.csproj", "{60311A6E-E724-401F-A054-5C6D8D395A99}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "13.ESGI.DesignPattern.Refactor", "13.ESGI.DesignPattern.Refactor\13.ESGI.DesignPattern.Refactor.csproj", "{C5B3CDF4-B995-4F97-ABB5-218A68BFB582}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{60311A6E-E724-401F-A054-5C6D8D395A99}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60311A6E-E724-401F-A054-5C6D8D395A99}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60311A6E-E724-401F-A054-5C6D8D395A99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5B3CDF4-B995-4F97-ABB5-218A68BFB582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5B3CDF4-B995-4F97-ABB5-218A68BFB582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5B3CDF4-B995-4F97-ABB5-218A68BFB582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5B3CDF4-B995-4F97-ABB5-218A68BFB582}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
